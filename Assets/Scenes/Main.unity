@@ -13940,6 +13940,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
+      propertyPath: killAnnouncements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8861400478645842789, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
       propertyPath: m_RootOrder
       value: 2

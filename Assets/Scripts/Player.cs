@@ -9,15 +9,17 @@ public class Player : Actor
     [SerializeField] private LayerMask slamLayer;
     [SerializeField] private GameObject slamFXPrefab;
     [SerializeField] private Animation2D slamAnim;
+    [SerializeField] private float killStreakMaxInterval = 2f;
     [SerializeField] private KillAnnouncement[] killAnnouncements;
 
     private bool canSlam = true;
     private int killStreak = 0;
+    private Coroutine killTimerCR;
 
     protected override void Update()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
         moveDir = new Vector2(moveX, moveY * 0.5f).normalized;
 
         int killCount = 0;
@@ -53,6 +55,9 @@ public class Player : Actor
         {
             PlayKillAnnouncement(killCount);
             killStreak += killCount;
+
+            if (killTimerCR != null) StopCoroutine(killTimerCR);
+            killTimerCR = StartCoroutine(KillStreakTimer());
         }
 
         base.Update();
@@ -82,6 +87,12 @@ public class Player : Actor
         canSlam = false;
         yield return new WaitForSeconds(slamCooldown);
         canSlam = true;
+    }
+
+    private IEnumerator KillStreakTimer()
+    {
+        yield return new WaitForSeconds(killStreakMaxInterval);
+        killStreak = 0;
     }
 
     [System.Serializable]
