@@ -13,12 +13,14 @@ public class Actor : MonoBehaviour
     protected new Rigidbody2D rigidbody2D;
     protected Animator2D animator2D;
     protected SpriteRenderer spriteRenderer;
+    protected AudioSource audioSource;
 
     private void Awake()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator2D = GetComponent<Animator2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     protected virtual void Update()

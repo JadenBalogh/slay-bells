@@ -9,14 +9,18 @@ public class Player : Actor
     [SerializeField] private LayerMask slamLayer;
     [SerializeField] private GameObject slamFXPrefab;
     [SerializeField] private Animation2D slamAnim;
+    [SerializeField] private KillAnnouncement[] killAnnouncements;
 
     private bool canSlam = true;
+    private int killStreak = 0;
 
     protected override void Update()
     {
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
         moveDir = new Vector2(moveX, moveY * 0.5f).normalized;
+
+        int killCount = 0;
 
         if (canSlam && Input.GetButtonDown("Fire1"))
         {
@@ -34,6 +38,7 @@ public class Player : Actor
                 if (target.TryGetComponent<Enemy>(out Enemy enemy))
                 {
                     enemy.Die();
+                    killCount++;
                 }
             }
 
@@ -44,7 +49,25 @@ public class Player : Actor
             spriteRenderer.flipX = moveX > 0f;
         }
 
+        if (killCount > 0)
+        {
+            PlayKillAnnouncement(killCount);
+            killStreak += killCount;
+        }
+
         base.Update();
+    }
+
+    private void PlayKillAnnouncement(int killCount)
+    {
+        for (int i = killAnnouncements.Length - 1; i >= 0; i--)
+        {
+            KillAnnouncement killAnnouncement = killAnnouncements[i];
+            if (killStreak + killCount >= killAnnouncement.killThreshold && killStreak < killAnnouncement.killThreshold)
+            {
+                audioSource.PlayOneShot(killAnnouncement.voiceLine);
+            }
+        }
     }
 
     private Vector2 GetAttackDir()
@@ -59,5 +82,13 @@ public class Player : Actor
         canSlam = false;
         yield return new WaitForSeconds(slamCooldown);
         canSlam = true;
+    }
+
+    [System.Serializable]
+    private class KillAnnouncement
+    {
+        public int killThreshold;
+        public string killText;
+        public AudioClip voiceLine;
     }
 }
