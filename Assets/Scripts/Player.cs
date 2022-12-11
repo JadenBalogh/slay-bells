@@ -15,7 +15,7 @@ public class Player : Actor
     {
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
-        movement = new Vector2(moveX, moveY);
+        moveDir = new Vector2(moveX, moveY * 0.5f).normalized;
 
         if (canSlam && Input.GetButtonDown("Fire1"))
         {

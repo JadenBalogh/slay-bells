@@ -7,7 +7,7 @@ public class Actor : MonoBehaviour
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private Animation2D moveAnim;
 
-    protected Vector2 movement;
+    protected Vector2 moveDir;
 
     protected new Rigidbody2D rigidbody2D;
     protected Animator2D animator2D;
@@ -22,11 +22,11 @@ public class Actor : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (movement != Vector2.zero)
+        if (moveDir != Vector2.zero)
         {
             animator2D.Play(moveAnim, true);
         }
 
-        rigidbody2D.velocity = movement * moveSpeed;
+        rigidbody2D.velocity = moveDir * moveSpeed;
     }
 }
