@@ -13961,9 +13961,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
+      propertyPath: maxMoveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
+      propertyPath: minMoveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
       propertyPath: slamCooldown
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
+      propertyPath: slamFXPrefab
+      value: 
+      objectReference: {fileID: 6381250508560467837, guid: b9ba0ed21230e984ca2340f83d95222a, type: 3}
     - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
       propertyPath: killAnnouncements.Array.size
       value: 0
