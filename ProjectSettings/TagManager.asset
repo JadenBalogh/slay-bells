@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1934191675
+    locked: 0
+  - name: GroundFX
+    uniqueID: 1188891799
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
