@@ -40912,6 +40912,30 @@ MonoBehaviour:
   - {fileID: 1092141253}
   - {fileID: 237677008}
   - {fileID: 1556990166}
+  - {fileID: 1805264637}
+  - {fileID: 1667339295}
+  - {fileID: 1238057795}
+  - {fileID: 1777102424}
+  - {fileID: 1205466441}
+  - {fileID: 649168445}
+  - {fileID: 2054905759}
+  - {fileID: 1314658532}
+  - {fileID: 1073466950}
+  - {fileID: 1616349227}
+  - {fileID: 2089729934}
+  - {fileID: 1421612523}
+  - {fileID: 376239968}
+  - {fileID: 901597664}
+  - {fileID: 1767612561}
+  - {fileID: 2005316234}
+  - {fileID: 249934575}
+  - {fileID: 600833702}
+  - {fileID: 1782484922}
+  - {fileID: 1170709428}
+  - {fileID: 1279010673}
+  - {fileID: 215530529}
+  - {fileID: 126159482}
+  - {fileID: 1888884311}
 --- !u!1 &2054905757
 GameObject:
   m_ObjectHideFlags: 0
@@ -41017,26 +41041,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
-      propertyPath: maxMoveSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
-      propertyPath: minMoveSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
-      propertyPath: slamCooldown
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
-      propertyPath: slamFXPrefab
-      value: 
-      objectReference: {fileID: 6381250508560467837, guid: b9ba0ed21230e984ca2340f83d95222a, type: 3}
-    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
-      propertyPath: killAnnouncements.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8861400478645842789, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
       propertyPath: m_RootOrder
       value: 2

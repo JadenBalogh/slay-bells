@@ -44,9 +44,10 @@ public class Player : Actor
         for (int i = killAnnouncements.Length - 1; i >= 0; i--)
         {
             KillAnnouncement killAnnouncement = killAnnouncements[i];
-            if (killStreak + killCount >= killAnnouncement.killThreshold && killStreak < killAnnouncement.killThreshold)
+            if (killStreak + killCount >= killAnnouncement.killThreshold && (killStreak < killAnnouncement.killThreshold || i == killAnnouncements.Length - 1))
             {
                 audioSource.PlayOneShot(killAnnouncement.voiceLine);
+                break;
             }
         }
     }
