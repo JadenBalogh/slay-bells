@@ -8,7 +8,6 @@ public class Player : Actor
     [SerializeField] private float slamDelay = 0.4f;
     [SerializeField] private float slamLength = 1.5f;
     [SerializeField] private LayerMask slamLayer;
-    [SerializeField] private GameObject slamFXPrefab;
     [SerializeField] private Animation2D slamAnim;
     [SerializeField] private float killStreakMaxInterval = 2f;
     [SerializeField] private KillAnnouncement[] killAnnouncements;
@@ -74,7 +73,6 @@ public class Player : Actor
         Vector2 sourcePos = transform.position;
         Vector2 slamPos = sourcePos + GetAttackDir() * slamLength / 2f;
 
-        Instantiate(slamFXPrefab, slamPos, Quaternion.identity);
         Collider2D[] targets = Physics2D.OverlapBoxAll(slamPos, Vector2.one * slamLength, 0f, slamLayer);
 
         foreach (Collider2D target in targets)
@@ -88,6 +86,12 @@ public class Player : Actor
 
         if (killCount > 0)
         {
+            GameManager.Kills += killCount;
+            if (GameManager.Kills >= 100)
+            {
+                GameManager.IsGameOver = true;
+            }
+
             PlayKillAnnouncement(killCount);
             killStreak += killCount;
 
