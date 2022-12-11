@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83c84e9d2e33f94fb8da1a7ae5eccb2, type: 3}
   m_Name: SantaSlam
   m_EditorClassIdentifier: 
-  frameRate: 1
+  frameRate: 10
   frames:
-  - {fileID: 454258399, guid: 18eaa60dfa62e534792c15ab7904f610, type: 3}
+  - {fileID: 2127906570, guid: cc986b4f9e052c64d9154277b3d315cc, type: 3}
+  - {fileID: -556854348, guid: cc986b4f9e052c64d9154277b3d315cc, type: 3}
+  - {fileID: 609887726, guid: cc986b4f9e052c64d9154277b3d315cc, type: 3}
+  - {fileID: -1318963034, guid: cc986b4f9e052c64d9154277b3d315cc, type: 3}
+  - {fileID: 431940262, guid: cc986b4f9e052c64d9154277b3d315cc, type: 3}

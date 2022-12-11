@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : Actor
 {
     [SerializeField] private float slamCooldown = 2f;
+    [SerializeField] private float slamDelay = 0.4f;
     [SerializeField] private float slamLength = 1.5f;
     [SerializeField] private LayerMask slamLayer;
     [SerializeField] private GameObject slamFXPrefab;
@@ -22,42 +23,17 @@ public class Player : Actor
         float moveY = Input.GetAxisRaw("Vertical");
         moveDir = new Vector2(moveX, moveY * 0.5f).normalized;
 
-        int killCount = 0;
-
         if (canSlam && Input.GetButtonDown("Fire1"))
         {
             StartCoroutine(SlamCooldown());
+            StartCoroutine(Attack());
+
             animator2D.Play(slamAnim, false, true);
-
-            Vector2 sourcePos = transform.position;
-            Vector2 attackDir = GetAttackDir();
-
-            Instantiate(slamFXPrefab, sourcePos + attackDir * slamLength / 2f, Quaternion.identity);
-            Collider2D[] targets = Physics2D.OverlapBoxAll(sourcePos + attackDir * slamLength / 2f, Vector2.one * slamLength, 0f, slamLayer);
-
-            foreach (Collider2D target in targets)
-            {
-                if (target.TryGetComponent<Enemy>(out Enemy enemy))
-                {
-                    enemy.Die();
-                    killCount++;
-                }
-            }
-
-            spriteRenderer.flipX = attackDir.x > 0f;
+            spriteRenderer.flipX = GetAttackDir().x > 0f;
         }
         else if (moveX != 0f)
         {
             spriteRenderer.flipX = moveX > 0f;
-        }
-
-        if (killCount > 0)
-        {
-            PlayKillAnnouncement(killCount);
-            killStreak += killCount;
-
-            if (killTimerCR != null) StopCoroutine(killTimerCR);
-            killTimerCR = StartCoroutine(KillStreakTimer());
         }
 
         base.Update();
@@ -87,6 +63,36 @@ public class Player : Actor
         canSlam = false;
         yield return new WaitForSeconds(slamCooldown);
         canSlam = true;
+    }
+
+    private IEnumerator Attack()
+    {
+        yield return new WaitForSeconds(slamDelay);
+
+        int killCount = 0;
+        Vector2 sourcePos = transform.position;
+        Vector2 slamPos = sourcePos + GetAttackDir() * slamLength / 2f;
+
+        Instantiate(slamFXPrefab, slamPos, Quaternion.identity);
+        Collider2D[] targets = Physics2D.OverlapBoxAll(slamPos, Vector2.one * slamLength, 0f, slamLayer);
+
+        foreach (Collider2D target in targets)
+        {
+            if (target.TryGetComponent<Enemy>(out Enemy enemy))
+            {
+                enemy.Die();
+                killCount++;
+            }
+        }
+
+        if (killCount > 0)
+        {
+            PlayKillAnnouncement(killCount);
+            killStreak += killCount;
+
+            if (killTimerCR != null) StopCoroutine(killTimerCR);
+            killTimerCR = StartCoroutine(KillStreakTimer());
+        }
     }
 
     private IEnumerator KillStreakTimer()
