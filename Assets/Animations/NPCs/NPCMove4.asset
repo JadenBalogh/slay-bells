@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d83c84e9d2e33f94fb8da1a7ae5eccb2, type: 3}
-  m_Name: SantaIdle
+  m_Name: NPCMove4
   m_EditorClassIdentifier: 
-  frameRate: 2
+  frameRate: 4
   frames:
-  - {fileID: -1358579595, guid: 10c2509a9fbe12f44a848542b0f00b94, type: 3}
-  - {fileID: 839486230, guid: 10c2509a9fbe12f44a848542b0f00b94, type: 3}
+  - {fileID: 425801847, guid: 43e91b3468add5e4fbf38a958fc04c4d, type: 3}
+  - {fileID: -2032307456, guid: 43e91b3468add5e4fbf38a958fc04c4d, type: 3}
+  - {fileID: 1331165936, guid: 43e91b3468add5e4fbf38a958fc04c4d, type: 3}
+  - {fileID: 378303410, guid: 43e91b3468add5e4fbf38a958fc04c4d, type: 3}

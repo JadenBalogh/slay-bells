@@ -295,7 +295,7 @@ MonoBehaviour:
   - killThreshold: 56
     killText: 
     voiceLine: {fileID: 8300000, guid: 963cab2a4f7927e40badbdbd45211124, type: 3}
-  - killThreshold: 70
+  - killThreshold: 69
     killText: 
     voiceLine: {fileID: 8300000, guid: da4bfb7d7ac656e4ca51b23c0e294a18, type: 3}
   - killThreshold: 85

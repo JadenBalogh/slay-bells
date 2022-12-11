@@ -82085,8 +82085,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3205a14c89003d469940efdf817e729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcPrefab: {fileID: 2067669401652816677, guid: cb671f6310db35447b183c3a593c35de, type: 3}
-  npcCount: 100
+  npcPrefabs:
+  - {fileID: 2067669401652816677, guid: cb671f6310db35447b183c3a593c35de, type: 3}
+  - {fileID: 2067669401652816677, guid: dbaeaba4170bb844fbb77d32a96d6060, type: 3}
+  - {fileID: 2067669401652816677, guid: ee6920bc8b465b342bd718917fc9fcb2, type: 3}
+  - {fileID: 2067669401652816677, guid: 4c2bb7cf90eff0c46bfe5ef26a93eac5, type: 3}
+  npcCount: 150
   waypoints:
   - {fileID: 255724662}
   - {fileID: 1436945612}
