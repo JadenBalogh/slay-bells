@@ -7,6 +7,7 @@ public class Player : Actor
     [SerializeField] private float slamCooldown = 2f;
     [SerializeField] private float slamLength = 1.5f;
     [SerializeField] private LayerMask slamLayer;
+    [SerializeField] private GameObject slamFXPrefab;
     [SerializeField] private Animation2D slamAnim;
 
     private bool canSlam = true;
@@ -19,12 +20,13 @@ public class Player : Actor
 
         if (canSlam && Input.GetButtonDown("Fire1"))
         {
-            animator2D.Play(slamAnim, false, true);
             StartCoroutine(SlamCooldown());
+            animator2D.Play(slamAnim, false, true);
 
             Vector2 sourcePos = transform.position;
             Vector2 attackDir = GetAttackDir();
 
+            Instantiate(slamFXPrefab, sourcePos + attackDir * slamLength / 2f, Quaternion.identity);
             Collider2D[] targets = Physics2D.OverlapBoxAll(sourcePos + attackDir * slamLength / 2f, Vector2.one * slamLength, 0f, slamLayer);
 
             foreach (Collider2D target in targets)

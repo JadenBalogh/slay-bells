@@ -5,6 +5,7 @@ using UnityEngine;
 public class Actor : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private Animation2D idleAnim;
     [SerializeField] private Animation2D moveAnim;
 
     protected Vector2 moveDir;
@@ -22,10 +23,7 @@ public class Actor : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (moveDir != Vector2.zero)
-        {
-            animator2D.Play(moveAnim, true);
-        }
+        animator2D.Play(moveDir != Vector2.zero ? moveAnim : idleAnim, true);
 
         rigidbody2D.velocity = moveDir * moveSpeed;
     }
