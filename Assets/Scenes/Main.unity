@@ -419,6 +419,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -461,7 +462,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 2.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -492,6 +493,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a724c0377d4694a4593934af73602d3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followTarget: {fileID: 1796786298}
+  followTime: 0.2
 --- !u!1 &567762773
 GameObject:
   m_ObjectHideFlags: 0
@@ -13874,6 +13889,11 @@ MonoBehaviour:
   - {fileID: 480262787}
   - {fileID: 1028658007}
   - {fileID: 1092141253}
+--- !u!4 &1796786298 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8861400478645842789, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
+  m_PrefabInstance: {fileID: 8861400480106003231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2031838566
 GameObject:
   m_ObjectHideFlags: 0
@@ -13940,6 +13960,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
+      propertyPath: maxMoveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
+      propertyPath: minMoveSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
+      propertyPath: slamCooldown
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
+      propertyPath: slamFXPrefab
+      value: 
+      objectReference: {fileID: 6381250508560467837, guid: b9ba0ed21230e984ca2340f83d95222a, type: 3}
+    - target: {fileID: 8861400478645842788, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
+      propertyPath: killAnnouncements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8861400478645842789, guid: ea322b2d5545adb4187c57e22ff11ab5, type: 3}
       propertyPath: m_RootOrder
       value: 2

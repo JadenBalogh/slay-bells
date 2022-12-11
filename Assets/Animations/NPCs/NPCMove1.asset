@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d83c84e9d2e33f94fb8da1a7ae5eccb2, type: 3}
   m_Name: NPCMove1
   m_EditorClassIdentifier: 
-  frameRate: 1
+  frameRate: 4
   frames:
-  - {fileID: -378579900, guid: 18eaa60dfa62e534792c15ab7904f610, type: 3}
+  - {fileID: 1779520102, guid: 5efdac274b638624aaa8ab0d950e0096, type: 3}
+  - {fileID: 1625181649, guid: 5efdac274b638624aaa8ab0d950e0096, type: 3}
+  - {fileID: -292126731, guid: 5efdac274b638624aaa8ab0d950e0096, type: 3}
+  - {fileID: -314295632, guid: 5efdac274b638624aaa8ab0d950e0096, type: 3}

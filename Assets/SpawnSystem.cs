@@ -10,11 +10,21 @@ public class SpawnSystem : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(SpawnLoop());
+    }
+
+    private IEnumerator SpawnLoop()
+    {
         for (int i = 0; i < npcCount; i++)
         {
             Waypoint targetWaypoint = waypoints[Random.Range(0, waypoints.Length)];
             Enemy enemy = Instantiate(npcPrefab, targetWaypoint.transform.position, Quaternion.identity);
             enemy.AssignWaypoint(targetWaypoint.GetRandomNext());
+
+            if (npcCount % 10 == 0)
+            {
+                yield return null;
+            }
         }
     }
 }

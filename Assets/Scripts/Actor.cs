@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Actor : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 1f;
+    [SerializeField] private float minMoveSpeed = 1f;
+    [SerializeField] private float maxMoveSpeed = 1f;
     [SerializeField] private Animation2D idleAnim;
     [SerializeField] private Animation2D moveAnim;
 
     protected Vector2 moveDir;
+    private float moveSpeed;
 
     protected new Rigidbody2D rigidbody2D;
     protected Animator2D animator2D;
@@ -21,6 +23,8 @@ public class Actor : MonoBehaviour
         animator2D = GetComponent<Animator2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+
+        moveSpeed = Random.Range(minMoveSpeed, maxMoveSpeed);
     }
 
     protected virtual void Update()

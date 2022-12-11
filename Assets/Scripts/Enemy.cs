@@ -17,6 +17,8 @@ public class Enemy : Actor
             targetWaypoint = targetWaypoint.GetRandomNext();
         }
 
+        spriteRenderer.flipX = moveDir.x > 0f;
+
         base.Update();
     }
 
