@@ -160,6 +160,48 @@ MonoBehaviour:
   slamFXPrefab: {fileID: 5859242311764929941, guid: e81e630392d4bd240a2f2b6b91a751c1, type: 3}
   slamAnim: {fileID: 11400000, guid: 27ce9c3318e95b14b927ba83cbbdb35a, type: 2}
   killAnnouncements:
-  - killThreshold: 0
+  - killThreshold: 1
     killText: 
-    voiceLine: {fileID: 0}
+    voiceLine: {fileID: 8300000, guid: 1a997501c3a726b468e69da7b7207a65, type: 3}
+  - killThreshold: 2
+    killText: 
+    voiceLine: {fileID: 8300000, guid: 3b486ae999db87048bf84ecb57d911ba, type: 3}
+  - killThreshold: 3
+    killText: 
+    voiceLine: {fileID: 8300000, guid: 9f854873bcd5a5f4e9c4db1244711cd1, type: 3}
+  - killThreshold: 4
+    killText: 
+    voiceLine: {fileID: 8300000, guid: 63ca4e998665d7d4ab641ac0b978fb70, type: 3}
+  - killThreshold: 5
+    killText: 
+    voiceLine: {fileID: 8300000, guid: eddaf960d55b4874199d0e5f35649356, type: 3}
+  - killThreshold: 6
+    killText: 
+    voiceLine: {fileID: 8300000, guid: 66b904ddff6a6a74b8e3d33dbff29044, type: 3}
+  - killThreshold: 7
+    killText: 
+    voiceLine: {fileID: 8300000, guid: 877d2e64b626c4d41adbb9631a737711, type: 3}
+  - killThreshold: 8
+    killText: 
+    voiceLine: {fileID: 8300000, guid: e381dde70df391b408902c0f3e471ec2, type: 3}
+  - killThreshold: 9
+    killText: 
+    voiceLine: {fileID: 8300000, guid: de4db2ef4dc68ef438dfb166c50a4561, type: 3}
+  - killThreshold: 10
+    killText: 
+    voiceLine: {fileID: 8300000, guid: c7e6c48fc22c5ab4d8946355745b64a3, type: 3}
+  - killThreshold: 11
+    killText: 
+    voiceLine: {fileID: 8300000, guid: c2b4706abbd863644b2c4a04a879d923, type: 3}
+  - killThreshold: 12
+    killText: 
+    voiceLine: {fileID: 8300000, guid: 963cab2a4f7927e40badbdbd45211124, type: 3}
+  - killThreshold: 13
+    killText: 
+    voiceLine: {fileID: 8300000, guid: da4bfb7d7ac656e4ca51b23c0e294a18, type: 3}
+  - killThreshold: 14
+    killText: 
+    voiceLine: {fileID: 8300000, guid: d94bfb3bcbd607e4ebf468389fc71ead, type: 3}
+  - killThreshold: 15
+    killText: 
+    voiceLine: {fileID: 8300000, guid: bdfc687aba5fe85449dc2e4d7f2fda12, type: 3}
